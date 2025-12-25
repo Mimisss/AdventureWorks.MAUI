@@ -4,7 +4,7 @@
              x:Class="AdventureWorks.MAUI.MainPage">
 
 
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
           ColumnDefinitions="Auto,*"
           RowSpacing="10"
           ColumnSpacing="10"
@@ -25,9 +25,13 @@
         <Label Grid.Row="3"
                VerticalOptions="Center"
                Text="Login ID"/>
-        <Entry Grid.Row="3"
-               Grid.Column="1"
-               Text=""/>
+        <VerticalStackLayout
+               Grid.Row="3"
+               Grid.Column="1">
+            <Entry Text=""/>
+            <Label FontSize="Micro"
+                   Text="Please use a combination of letters and numbers."/>
+        </VerticalStackLayout>
         <Label Grid.Row="4"
                VerticalOptions="Center"
                Text="First Name"/>
@@ -47,5 +51,12 @@
                Grid.Column="1"
                Keyboard="Email"
                Text=""/>
+        <HorizontalStackLayout
+               Grid.Row="7"
+               Grid.Column="1"
+               Spacing="5">
+            <Button Text="Save"/>
+            <Button Text="Cancel"/>
+        </HorizontalStackLayout>
     </Grid>
 </ContentPage>
