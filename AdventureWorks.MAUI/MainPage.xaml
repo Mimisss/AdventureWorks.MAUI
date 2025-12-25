@@ -4,8 +4,48 @@
              x:Class="AdventureWorks.MAUI.MainPage">
 
 
-    <Label Text="Adventure Works"
-           FontSize="Large"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+          ColumnDefinitions="Auto,*"
+          RowSpacing="10"
+          ColumnSpacing="10"
+          Padding="10"
+          Margin="10">
+        <Label Grid.Row="0"
+               Grid.ColumnSpan="2"
+               Text="User Information"
+               FontSize="Title"/>
+        <Label Grid.Row="1"
+               Grid.ColumnSpan="2"
+               Text="Use this Screen to Modify User Information."
+               FontSize="Body"/>
+        <BoxView Grid.Row="2"
+                 Grid.ColumnSpan="2"
+                 HeightRequest="1"
+                 Color="Black"/>
+        <Label Grid.Row="3"
+               VerticalOptions="Center"
+               Text="Login ID"/>
+        <Entry Grid.Row="3"
+               Grid.Column="1"
+               Text=""/>
+        <Label Grid.Row="4"
+               VerticalOptions="Center"
+               Text="First Name"/>
+        <Entry Grid.Row="4"
+               Grid.Column="1"
+               Text=""/>
+        <Label Grid.Row="5"
+               VerticalOptions="Center"
+               Text="Last Name"/>
+        <Entry Grid.Row="5"
+               Grid.Column="1"
+               Text=""/>
+        <Label Grid.Row="6"
+               VerticalOptions="Center"
+               Text="Email Address"/>
+        <Entry Grid.Row="6"
+               Grid.Column="1"
+               Keyboard="Email"
+               Text=""/>
+    </Grid>
 </ContentPage>
