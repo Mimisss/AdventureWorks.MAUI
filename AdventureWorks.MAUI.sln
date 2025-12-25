@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36804.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.MAUI", "AdventureWorks.MAUI\AdventureWorks.MAUI.csproj", "{D4C7AB00-8DF7-42B8-99A2-641324850539}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4C7AB00-8DF7-42B8-99A2-641324850539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C7AB00-8DF7-42B8-99A2-641324850539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C7AB00-8DF7-42B8-99A2-641324850539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C7AB00-8DF7-42B8-99A2-641324850539}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC54510A-BA9E-40F9-BC18-A8D4F36DCE25}
+	EndGlobalSection
+EndGlobal
