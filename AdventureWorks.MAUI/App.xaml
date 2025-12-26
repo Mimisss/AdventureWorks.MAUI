@@ -22,6 +22,11 @@
             <Style TargetType="HorizontalStackLayout">
                 <Setter Property="Spacing" Value="5" />
             </Style>
+            <Style TargetType="Element"
+                   x:Key="ShellStyle">
+                <Setter Property="Shell.BackgroundColor" Value="Blue" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
