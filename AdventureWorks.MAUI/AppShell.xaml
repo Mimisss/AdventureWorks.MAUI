@@ -4,12 +4,27 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AdventureWorks.MAUI"
+    xmlns:views="clr-namespace:AdventureWorks.MAUI.Views"
     Title="{StaticResource ApplicationTitle}"
     Style="{StaticResource ShellStyle}">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <TabBar>
+        <!-- ShellContent references a single page in the application to which you want to navigate -->
+        <ShellContent Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}" />
+        <ShellContent Title="Users"
+            ContentTemplate="{DataTemplate views:UserDetailView}" />
+        <ShellContent Title="Products"
+            ContentTemplate="{DataTemplate views:ProductDetailView}" />
+        <ShellContent Title="Customers"
+            ContentTemplate="{DataTemplate views:CustomerDetailView}" />
+        <Tab Title="Maintenance">
+            <ShellContent Title="Colors"
+                ContentTemplate="{DataTemplate views:ColorListView}" />
+            <ShellContent Title="Phone Types"
+                ContentTemplate="{DataTemplate views:PhoneTypesListView}" />
+        </Tab>
+        <ShellContent Title="Login"
+            ContentTemplate="{DataTemplate views:LoginView}" />        
+    </TabBar>
 </Shell>
