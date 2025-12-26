@@ -6,13 +6,17 @@
     <x:String x:Key="ApplicationTitle">
         Adventure Works
     </x:String>
-        
+
+    <x:Double x:Key="DefaultSpacingForGrid">
+        10    
+    </x:Double>
+    
     <Style TargetType="Grid"
            x:Key="Grid.Page">
-        <Setter Property="ColumnSpacing" Value="10" />
-        <Setter Property="RowSpacing" Value="10" />
-        <Setter Property="Margin" Value="10" />
-        <Setter Property="Padding" Value="10" />
+        <Setter Property="ColumnSpacing" Value="{StaticResource DefaultSpacingForGrid}" />
+        <Setter Property="RowSpacing" Value="{StaticResource DefaultSpacingForGrid}" />
+        <Setter Property="Margin" Value="{StaticResource DefaultSpacingForGrid}" />
+        <Setter Property="Padding" Value="{StaticResource DefaultSpacingForGrid}" />
     </Style>
     <Style TargetType="Label">
         <Setter Property="VerticalOptions" Value="Center" />
