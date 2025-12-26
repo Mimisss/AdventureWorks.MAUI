@@ -1,12 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AdventureWorks.MAUI.MainPage">
+             x:Class="AdventureWorks.MAUI.Views.PhoneTypesListView"
+             Title="Phone Types List">
 
-    <ContentPage.Resources>
-    </ContentPage.Resources>
-
-    <Label Text="{StaticResource ApplicationTitle}"
+    <Label Text="Phone Types List"
            FontSize="Large"
            VerticalOptions="Center"
            HorizontalOptions="Center" />
