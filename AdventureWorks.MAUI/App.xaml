@@ -8,25 +8,8 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary Source="Resources/Styles/AppStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <Style TargetType="Grid"
-                   x:Key="Grid.Page">
-                <Setter Property="ColumnSpacing" Value="10" />
-                <Setter Property="RowSpacing" Value="10" />
-                <Setter Property="Margin" Value="10" />
-                <Setter Property="Padding" Value="10" />
-            </Style>
-            <Style TargetType="Label">
-                <Setter Property="VerticalOptions" Value="Center" />
-            </Style>
-            <Style TargetType="HorizontalStackLayout">
-                <Setter Property="Spacing" Value="5" />
-            </Style>
-            <Style TargetType="Element"
-                   x:Key="ShellStyle">
-                <Setter Property="Shell.BackgroundColor" Value="Blue" />
-                <Setter Property="Shell.TitleColor" Value="White" />
-            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
