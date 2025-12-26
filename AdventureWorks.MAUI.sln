@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36804.6 d17.14
+VisualStudioVersion = 17.14.36804.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.MAUI", "AdventureWorks.MAUI\AdventureWorks.MAUI.csproj", "{D4C7AB00-8DF7-42B8-99A2-641324850539}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Library.MAUI", "Common.Library.MAUI\Common.Library.MAUI.csproj", "{351E99C6-FDC3-45E0-99BE-AA2E3229CDC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,8 +15,13 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D4C7AB00-8DF7-42B8-99A2-641324850539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D4C7AB00-8DF7-42B8-99A2-641324850539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C7AB00-8DF7-42B8-99A2-641324850539}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{D4C7AB00-8DF7-42B8-99A2-641324850539}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4C7AB00-8DF7-42B8-99A2-641324850539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{351E99C6-FDC3-45E0-99BE-AA2E3229CDC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351E99C6-FDC3-45E0-99BE-AA2E3229CDC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351E99C6-FDC3-45E0-99BE-AA2E3229CDC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351E99C6-FDC3-45E0-99BE-AA2E3229CDC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

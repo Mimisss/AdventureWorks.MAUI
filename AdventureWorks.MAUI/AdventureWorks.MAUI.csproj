@@ -65,6 +65,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Common.Library.MAUI\Common.Library.MAUI.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Resources\Styles\AppStyles.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
