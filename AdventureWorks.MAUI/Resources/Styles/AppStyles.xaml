@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AdventureWorks.MAUI.Resources.Styles.AppStyles">
 
+    <x:String x:Key="ApplicationTitle">
+        Adventure Works
+    </x:String>
+        
     <Style TargetType="Grid"
            x:Key="Grid.Page">
         <Setter Property="ColumnSpacing" Value="10" />
