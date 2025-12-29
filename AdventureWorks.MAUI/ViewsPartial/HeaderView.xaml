@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdventureWorks.MAUI.ViewsPartial.HeaderView"
+             x:Name="header">
+
+    <Grid BindingContext="{x:Reference header}"
+          RowDefinitions="Auto,Auto,Auto">
+        <Label Grid.Row="0"
+               Text="{Binding Path=ViewTitle, FallbackValue='View Title'}"
+               HorizontalOptions="Center"
+               FontSize="Title" />
+        <Label Grid.Row="1"               
+               Text="{Binding Path=ViewDescription, FallbackValue='View Description'}"
+               HorizontalOptions="Center"
+               FontSize="Body" />
+        <BoxView Grid.Row="2"                 
+                 HeightRequest="1"
+                 Color="DarkBlue" />
+    </Grid>
+</ContentView>
