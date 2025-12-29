@@ -6,9 +6,9 @@
 
     <Border Style="{StaticResource Border.Page}">
         <Label Text="Customer Information"
-           FontSize="Large"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+               FontSize="Large"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
     </Border>
     
 </ContentPage>

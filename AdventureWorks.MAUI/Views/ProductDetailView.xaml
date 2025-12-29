@@ -6,83 +6,85 @@
              Title="Product Information">
 
     <Border Style="{StaticResource Border.Page}">
-        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
-          ColumnDefinitions="Auto,*"
-          Style="{StaticResource Grid.Page}">
+        <ScrollView>
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                  ColumnDefinitions="Auto,*"
+                  Style="{StaticResource Grid.Page}">
 
-            <partial:HeaderView
-            Grid.Row="0"
-            Grid.ColumnSpan="2"
-            ViewTitle="Product Information"
-            ViewDescription="Modify product information." />
+                <partial:HeaderView
+                    Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    ViewTitle="Product Information"
+                    ViewDescription="Modify product information." />
 
-            <Label Grid.Row="1" 
-               Text="Product Name" />
-            <Entry Grid.Row="1"
-               Grid.Column="1" 
-               Text="" />
-            <Label Grid.Row="2" 
-               Text="Product Number" />
-            <Entry Grid.Row="2"
-               Grid.Column="1" 
-               Text="" />
-            <Label Grid.Row="3" 
-               Text="Color" />
-            <Entry Grid.Row="3"
-               Grid.Column="1" 
-               Text="" />
-            <Label Grid.Row="4" 
-               Text="Cost" />
-            <Entry Grid.Row="4"
-               Grid.Column="1" 
-               Text="" />
-            <Label Grid.Row="5" 
-               Text="Price" />
-            <Entry Grid.Row="5"
-               Grid.Column="1" 
-               Text="" />
-            <Label Grid.Row="6" 
-               Text="Size" />
-            <Entry Grid.Row="6"
-               Grid.Column="1" 
-               Text="" />
-            <Label Grid.Row="7" 
-               Text="Weight" />
-            <Entry Grid.Row="7"
-               Grid.Column="1" 
-               Text="" />
-            <Label Grid.Row="8" 
-               Text="Category" />
-            <Entry Grid.Row="8"
-               Grid.Column="1" 
-               Text="" />
-            <Label Grid.Row="9" 
-               Text="Model" />
-            <Entry Grid.Row="9"
-               Grid.Column="1" 
-               Text="" />
-            <Label Grid.Row="10" 
-               Text="Selling Start Date" />
-            <Entry Grid.Row="10"
-               Grid.Column="1" 
-               Text="" />
-            <Label Grid.Row="11" 
-               Text="Selling End Date" />
-            <Entry Grid.Row="11"
-               Grid.Column="1" 
-               Text="" />
-            <Label Grid.Row="12" 
-               Text="Discontinued Date" />
-            <Entry Grid.Row="12"
-               Grid.Column="1" 
-               Text="" />
-            <HorizontalStackLayout
-            Grid.Row="13"
-            Grid.Column="1">
-                <Button Text="Save" />
-                <Button Text="Cancel" />
-            </HorizontalStackLayout>
-        </Grid>
+                <Label Grid.Row="1" 
+                       Text="Product Name" />
+                <Entry Grid.Row="1"
+                       Grid.Column="1" 
+                       Text="" />
+                <Label Grid.Row="2" 
+                       Text="Product Number" />
+                <Entry Grid.Row="2"
+                       Grid.Column="1" 
+                       Text="" />
+                <Label Grid.Row="3" 
+                       Text="Color" />
+                <Entry Grid.Row="3"
+                       Grid.Column="1" 
+                       Text="" />
+                <Label Grid.Row="4" 
+                       Text="Cost" />
+                <Entry Grid.Row="4"
+                       Grid.Column="1" 
+                       Text="" />
+                <Label Grid.Row="5" 
+                       Text="Price" />
+                <Entry Grid.Row="5"
+                       Grid.Column="1" 
+                       Text="" />
+                <Label Grid.Row="6" 
+                       Text="Size" />
+                <Entry Grid.Row="6"
+                       Grid.Column="1" 
+                       Text="" />
+                <Label Grid.Row="7" 
+                       Text="Weight" />
+                <Entry Grid.Row="7"
+                       Grid.Column="1" 
+                       Text="" />
+                <Label Grid.Row="8" 
+                       Text="Category" />
+                <Entry Grid.Row="8"
+                       Grid.Column="1" 
+                       Text="" />
+                <Label Grid.Row="9" 
+                       Text="Model" />
+                <Entry Grid.Row="9"
+                       Grid.Column="1" 
+                       Text="" />
+                <Label Grid.Row="10" 
+                       Text="Selling Start Date" />
+                <Entry Grid.Row="10"
+                       Grid.Column="1" 
+                       Text="" />
+                <Label Grid.Row="11" 
+                       Text="Selling End Date" />
+                <Entry Grid.Row="11"
+                       Grid.Column="1" 
+                       Text="" />
+                <Label Grid.Row="12" 
+                       Text="Discontinued Date" />
+                <Entry Grid.Row="12"
+                       Grid.Column="1" 
+                       Text="" />
+                <HorizontalStackLayout
+                    Grid.Row="13"
+                    Grid.Column="1">
+                    <Button Text="Save" />
+                    <Button Text="Cancel" />
+                </HorizontalStackLayout>
+            </Grid>
+        </ScrollView>
     </Border>
     
 </ContentPage>
