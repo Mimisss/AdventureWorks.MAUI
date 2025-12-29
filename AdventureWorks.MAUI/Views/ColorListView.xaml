@@ -4,8 +4,10 @@
              x:Class="AdventureWorks.MAUI.Views.ColorListView"
              Title="Color List">
 
-    <Label Text="Color List"
+    <Border Style="{StaticResource Border.Page}">
+        <Label Text="Color List"
            FontSize="Large"
            VerticalOptions="Center"
-           HorizontalOptions="Center" />    
+           HorizontalOptions="Center" />
+    </Border>
 </ContentPage>

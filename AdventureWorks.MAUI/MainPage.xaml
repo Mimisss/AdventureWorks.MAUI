@@ -6,8 +6,10 @@
     <ContentPage.Resources>
     </ContentPage.Resources>
 
-    <Label Text="{StaticResource ApplicationTitle}"
-           FontSize="Large"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+    <Border Style="{StaticResource Border.Page}">
+        <Label Text="{StaticResource ApplicationTitle}"
+               FontSize="Large"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+    </Border>
 </ContentPage>

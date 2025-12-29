@@ -4,13 +4,15 @@
              x:Class="AdventureWorks.MAUI.Views.UserListView"
              Title="User List">
 
-    <VerticalStackLayout VerticalOptions="Center"
+    <Border Style="{StaticResource Border.Page}">
+        <VerticalStackLayout VerticalOptions="Center"
                          HorizontalOptions="Center"
                          Spacing="10">
-        <Label Text="User List"            
+            <Label Text="User List"            
                FontSize="Header"
                HorizontalOptions="Center" />
-        <Button Text="Details"
+            <Button Text="Details"
                 Clicked="NavigateToDetail_Clicked" />
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Border>
 </ContentPage>

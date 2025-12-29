@@ -5,7 +5,8 @@
              x:Name="header">
 
     <Grid BindingContext="{x:Reference header}"
-          RowDefinitions="Auto,Auto,Auto">
+          RowDefinitions="Auto,Auto"
+          Margin="0, 20">
         <Label Grid.Row="0"
                Text="{Binding Path=ViewTitle, FallbackValue='View Title'}"
                HorizontalOptions="Center"
@@ -14,8 +15,5 @@
                Text="{Binding Path=ViewDescription, FallbackValue='View Description'}"
                HorizontalOptions="Center"
                FontSize="Body" />
-        <BoxView Grid.Row="2"                 
-                 HeightRequest="1"
-                 Color="DarkBlue" />
     </Grid>
 </ContentView>

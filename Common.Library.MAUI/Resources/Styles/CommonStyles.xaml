@@ -7,8 +7,12 @@
         10
     </x:Double>
 
+    <Style TargetType="Page" ApplyToDerivedTypes="True">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BackgroundColor" Value="#ac99ea" />
+    </Style>    
     <Style TargetType="Grid"
-           x:Key="Grid.Page">
+           x:Key="Grid.Page">        
         <Setter Property="ColumnSpacing" Value="{StaticResource DefaultSpacingForGrid}" />
         <Setter Property="RowSpacing" Value="{StaticResource DefaultSpacingForGrid}" />
         <Setter Property="Margin" Value="{StaticResource DefaultSpacingForGrid}" />
@@ -24,5 +28,15 @@
            x:Key="ShellStyle">
         <Setter Property="Shell.BackgroundColor" Value="Blue" />
         <Setter Property="Shell.TitleColor" Value="White" />
-    </Style>    
+    </Style>
+    <Style TargetType="Border"
+           x:Key="Border.Page">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Stroke" Value="White" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10" />
+        <Setter Property="Margin" Value="20" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+    </Style>
 </ResourceDictionary>

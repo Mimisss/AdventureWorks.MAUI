@@ -5,30 +5,32 @@
              x:Class="AdventureWorks.MAUI.Views.LoginView"
              Title="Login">
 
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto" 
+    <Border Style="{StaticResource Border.Page}">
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto" 
           ColumnDefinitions="Auto,*"
           Style="{StaticResource Grid.Page}">
-        <partial:HeaderView 
+            <partial:HeaderView 
             Grid.Row="0"
             Grid.ColumnSpan="2"
             ViewTitle="Login"
             ViewDescription="Please enter your login credentials." />
-        <Label Grid.Row="1"
+            <Label Grid.Row="1"
                Text="Login ID"/>
-        <Entry Grid.Row="1"
+            <Entry Grid.Row="1"
                Grid.Column="1"
                Text=""/>
-        <Label Grid.Row="2"
+            <Label Grid.Row="2"
                Text="Password"/>
-        <Entry Grid.Row="2"
+            <Entry Grid.Row="2"
                Grid.Column="1"
                IsPassword="True"
                Text=""/>
-        <HorizontalStackLayout
+            <HorizontalStackLayout
             Grid.Row="3"
             Grid.Column="1">
-            <Button Text="Login" />
-            <Button Text="Cancel" />
-        </HorizontalStackLayout>
-    </Grid>
+                <Button Text="Login" />
+                <Button Text="Cancel" />
+            </HorizontalStackLayout>
+        </Grid>
+    </Border>
 </ContentPage>
