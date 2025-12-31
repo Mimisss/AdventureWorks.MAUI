@@ -7,7 +7,7 @@
 
     <Border Style="{StaticResource Border.Page}">
         <ScrollView>
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
                   ColumnDefinitions="Auto,*"
                   Style="{StaticResource Grid.Page}">
 
@@ -77,8 +77,20 @@
                 <Entry Grid.Row="12"
                        Grid.Column="1" 
                        Text="" />
+                <Label Grid.Row="13"
+                       Text="Product Picture" />
+                <Image Grid.Row="13"
+                       Grid.Column="1"
+                       HorizontalOptions="Start"
+                       Aspect="Center"
+                       Source="product.jpg" />
+                <Label Grid.Row="14"
+                       Text="Product Notes" />
+                <Editor Grid.Row="14"
+                        Grid.Column="1"
+                        HeightRequest="100" />
                 <HorizontalStackLayout
-                    Grid.Row="13"
+                    Grid.Row="15"
                     Grid.Column="1">
                     <Button Text="Save" />
                     <Button Text="Cancel" />
