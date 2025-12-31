@@ -120,9 +120,11 @@
                     Grid.Row="11"
                     Grid.Column="1"
                     Spacing="5">
-                    <Button Text="Save"
-                            Clicked="SaveButton_Clicked"/>
-                    <Button Text="Cancel"/>
+                    <ImageButton Source="save.png"
+                                 ToolTipProperties.Text="Save"
+                                 Clicked="SaveButton_Clicked"/>
+                    <ImageButton Source="cancel.png"
+                                 ToolTipProperties.Text="Cancel"/>
                 </HorizontalStackLayout>
             </Grid>
         </ScrollView>
