@@ -7,7 +7,7 @@
 
     <Border Style="{StaticResource Border.Page}">
         <ScrollView>
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
                   ColumnDefinitions="Auto,*"
                   Style="{StaticResource Grid.Page}">
                 <partial:HeaderView 
@@ -83,8 +83,13 @@
                         <RadioButton GroupName="EmployeeType" />
                     </HorizontalStackLayout>
                 </FlexLayout>
+                <Label Grid.Row="8"
+                       Text="Birth Date" />
+                <DatePicker Grid.Row="8" 
+                            Grid.Column="1"
+                            Format="dd/MM/yyyy" />
                 <HorizontalStackLayout
-                    Grid.Row="8"
+                    Grid.Row="9"
                     Grid.Column="1"
                     Spacing="5">
                     <Button Text="Save"
