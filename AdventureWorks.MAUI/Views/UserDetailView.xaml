@@ -7,7 +7,7 @@
 
     <Border Style="{StaticResource Border.Page}">
         <ScrollView>
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
                   ColumnDefinitions="Auto,*"
                   Style="{StaticResource Grid.Page}">
                 <partial:HeaderView 
@@ -93,8 +93,31 @@
                 <TimePicker Grid.Row="9"
                             Grid.Column="1"
                             Time="08:00:00" />
+                <Label Grid.Row="10"
+                       Text="Phone" />
+                <FlexLayout Grid.Row="10"
+                            Grid.Column="1"
+                            Wrap="Wrap"
+                            Direction="Row">
+                    <HorizontalStackLayout>
+                        <Entry Text=""
+                               MinimumWidthRequest="150" /> 
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Picker VerticalTextAlignment="Center">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Mobile</x:String>
+                                    <x:String>Home</x:String>
+                                    <x:String>Work</x:String>
+                                    <x:String>Other</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </HorizontalStackLayout>
+                </FlexLayout>
                 <HorizontalStackLayout
-                    Grid.Row="10"
+                    Grid.Row="11"
                     Grid.Column="1"
                     Spacing="5">
                     <Button Text="Save"
