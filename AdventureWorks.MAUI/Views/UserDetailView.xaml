@@ -7,7 +7,7 @@
 
     <Border Style="{StaticResource Border.Page}">
         <ScrollView>
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
                   ColumnDefinitions="Auto,*"
                   Style="{StaticResource Grid.Page}">
                 <partial:HeaderView 
@@ -63,8 +63,12 @@
                         <CheckBox IsChecked="true"/>
                     </HorizontalStackLayout>
                 </FlexLayout>
+                <Label Grid.Row="6"
+                       Text="Stll Employed?" />
+                <Switch Grid.Row="6"
+                        Grid.Column="1" />
                 <HorizontalStackLayout
-                    Grid.Row="6"
+                    Grid.Row="7"
                     Grid.Column="1"
                     Spacing="5">
                     <Button Text="Save"
