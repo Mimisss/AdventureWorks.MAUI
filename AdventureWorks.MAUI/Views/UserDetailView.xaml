@@ -7,7 +7,7 @@
 
     <Border Style="{StaticResource Border.Page}">
         <ScrollView>
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
                   ColumnDefinitions="Auto,*"
                   Style="{StaticResource Grid.Page}">
                 <partial:HeaderView 
@@ -88,8 +88,13 @@
                 <DatePicker Grid.Row="8" 
                             Grid.Column="1"
                             Format="dd/MM/yyyy" />
+                <Label Grid.Row="9"
+                       Text="Start Time" />
+                <TimePicker Grid.Row="9"
+                            Grid.Column="1"
+                            Time="08:00:00" />
                 <HorizontalStackLayout
-                    Grid.Row="9"
+                    Grid.Row="10"
                     Grid.Column="1"
                     Spacing="5">
                     <Button Text="Save"
