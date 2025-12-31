@@ -7,7 +7,7 @@
 
     <Border Style="{StaticResource Border.Page}">
         <ScrollView>
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
                   ColumnDefinitions="Auto,*"
                   Style="{StaticResource Grid.Page}">
                 <partial:HeaderView 
@@ -67,8 +67,24 @@
                        Text="Stll Employed?" />
                 <Switch Grid.Row="6"
                         Grid.Column="1" />
+                <Label Grid.Row="7"
+                       Text="Employee Type" />
+                <FlexLayout Grid.Row="7"
+                            Grid.Column="1"
+                            Wrap="Wrap"
+                            Direction="Row">
+                    <HorizontalStackLayout>
+                        <Label Text="Full Time" />
+                        <RadioButton GroupName="EmployeeType"
+                                     IsChecked="true" />                        
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Part Time" />
+                        <RadioButton GroupName="EmployeeType" />
+                    </HorizontalStackLayout>
+                </FlexLayout>
                 <HorizontalStackLayout
-                    Grid.Row="7"
+                    Grid.Row="8"
                     Grid.Column="1"
                     Spacing="5">
                     <Button Text="Save"
