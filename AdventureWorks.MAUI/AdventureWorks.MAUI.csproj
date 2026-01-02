@@ -66,6 +66,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\AdventureWorks.EntityLayer\AdventureWorks.EntityLayer.csproj" />
+	  <ProjectReference Include="..\AdventureWorks.ViewModelLayer\AdventureWorks.ViewModelLayer.csproj" />
 	  <ProjectReference Include="..\Common.Library.MAUI\Common.Library.MAUI.csproj" />
 	  <ProjectReference Include="..\Common.Library\Common.Library.csproj" />
 	</ItemGroup>

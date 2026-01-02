@@ -1,29 +1,25 @@
-using AdventureWorks.EntityLayer;
+using AdventureWorks.ViewModelLayer;
 
 namespace AdventureWorks.MAUI.Views;
 
 public partial class UserDetailView : ContentPage
 {
-	private readonly User viewModel;
+	private readonly UserViewModel viewModel = new();
 
 	public UserDetailView()
 	{
 		InitializeComponent();
-		
-		viewModel = (User)Resources["viewModel"];
 	}
 
-    protected override void OnAppearing()
+    protected async override void OnAppearing()
     {
         base.OnAppearing();
 
-		viewModel.LoginId = "PeterPiper384";
+		// Set the BindingContext to the ViewModel
+		BindingContext = viewModel;
 
-		viewModel.FirstName = "Peter";
-
-		viewModel.LastName = "Piper";
-
-		viewModel.Email = "Peter@pipering.com";
+		// Retrieve a User
+		await viewModel.GetAsync(1);
     }
 
 	private void SaveButton_Clicked(object sender, EventArgs e)
