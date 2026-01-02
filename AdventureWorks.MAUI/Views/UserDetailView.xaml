@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:partial="clr-namespace:AdventureWorks.MAUI.ViewsPartial"
              xmlns:vm="clr-namespace:AdventureWorks.EntityLayer;assembly=AdventureWorks.EntityLayer"
+             xmlns:converters="clr-namespace:Common.Library.MAUI.Converters;assembly=Common.Library.MAUI"
              x:Class="AdventureWorks.MAUI.Views.UserDetailView"
              x:DataType="vm:User"
              Title="User Information">
@@ -23,7 +24,10 @@
                  IsEnrolledInFlexTime="True"
                  IsEmployed="True"
                  BirthDate="10-03-1975"
-                 StartTime="08:00:00" />                 
+                 StartTime="08:00:00" />
+
+        <!-- Declare an instance of the InvertedBoolConverter class -->
+        <converters:InvertedBoolConverter x:Key="invertedBoolean" />
     </ContentPage.Resources>
     
     <Border Style="{StaticResource Border.Page}"
@@ -104,7 +108,8 @@
                     </HorizontalStackLayout>
                     <HorizontalStackLayout>
                         <Label Text="Part Time" />
-                        <RadioButton GroupName="EmployeeType" />
+                        <RadioButton GroupName="EmployeeType"
+                                     IsChecked="{Binding IsFullTime, Converter={StaticResource invertedBoolean}}"/>
                     </HorizontalStackLayout>
                 </FlexLayout>
                 <Label Grid.Row="8"
@@ -117,6 +122,7 @@
                        Text="Start Time" />
                 <TimePicker Grid.Row="9"
                             Grid.Column="1"
+                            IsEnabled="{Binding IsFullTime, Converter={StaticResource invertedBoolean}}"
                             Time="{Binding StartTime}" />
                 <Label Grid.Row="10"
                        Text="Phone" />
