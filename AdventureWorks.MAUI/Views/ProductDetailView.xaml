@@ -41,7 +41,8 @@
                     <Stepper x:Name="costStepper"
                              Value="5"
                              Minimum="1"
-                             Maximum="9999"
+                             BindingContext="{x:Reference priceStepper}"
+                             Maximum="{Binding Value}"
                              Increment="1"/>
                 </HorizontalStackLayout>
                 <Label Grid.Row="5" 
@@ -52,7 +53,8 @@
                            Text="{Binding Value}" />
                     <Stepper x:Name="priceStepper"
                              Value="10"
-                             Minimum="1"
+                             BindingContext="{x:Reference costStepper}"
+                             Minimum="{Binding Value}"
                              Maximum="9999"
                              Increment="1" />
                 </HorizontalStackLayout>
