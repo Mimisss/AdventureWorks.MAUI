@@ -65,6 +65,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\AdventureWorks.EntityLayer\AdventureWorks.EntityLayer.csproj" />
 	  <ProjectReference Include="..\Common.Library.MAUI\Common.Library.MAUI.csproj" />
 	</ItemGroup>
 
