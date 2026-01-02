@@ -52,7 +52,7 @@
                     </HorizontalStackLayout>
                     <HorizontalStackLayout>
                         <Label Text="Flex Time?"/>
-                        <CheckBox />
+                        <CheckBox x:Name="flexTime" />
                     </HorizontalStackLayout>
                     <HorizontalStackLayout>
                         <Label Text="Health Care?"/>
@@ -92,6 +92,8 @@
                        Text="Start Time" />
                 <TimePicker Grid.Row="9"
                             Grid.Column="1"
+                            BindingContext="{x:Reference flexTime}"
+                            IsEnabled="{Binding IsChecked}"
                             Time="08:00:00" />
                 <Label Grid.Row="10"
                        Text="Phone" />
