@@ -106,15 +106,8 @@
                                MinimumWidthRequest="150" /> 
                     </HorizontalStackLayout>
                     <HorizontalStackLayout>
-                        <Picker VerticalTextAlignment="Center">
-                            <Picker.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>Mobile</x:String>
-                                    <x:String>Home</x:String>
-                                    <x:String>Work</x:String>
-                                    <x:String>Other</x:String>
-                                </x:Array>
-                            </Picker.ItemsSource>
+                        <Picker VerticalTextAlignment="Center"
+                                ItemsSource="{StaticResource phoneTypes}">
                         </Picker>
                     </HorizontalStackLayout>
                 </FlexLayout>

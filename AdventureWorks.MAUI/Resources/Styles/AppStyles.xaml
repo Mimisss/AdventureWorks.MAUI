@@ -6,4 +6,12 @@
         Adventure Works
     </x:String>
 
+    <!-- Phone Types Resource -->
+    <x:Array Type="{x:Type x:String}"
+             x:Key="phoneTypes">
+        <x:String>Mobile</x:String>
+        <x:String>Home</x:String>
+        <x:String>Work</x:String>
+        <x:String>Other</x:String>
+    </x:Array>
 </ResourceDictionary>
