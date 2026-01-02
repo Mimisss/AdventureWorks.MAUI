@@ -49,9 +49,16 @@
                        Text="" />
                 <Label Grid.Row="7" 
                        Text="Weight" />
-                <Entry Grid.Row="7"
-                       Grid.Column="1" 
-                       Text="" />
+                <VerticalStackLayout Grid.Row="7"
+                                     Grid.Column="1">
+                    <Slider x:Name="weight"
+                            Value="1"
+                            Minimum="1"
+                            Maximum="100"
+                            ValueChanged="Weight_Changed" />
+                    <Label BindingContext="{x:Reference weight}"
+                           Text="{Binding Value}" />
+                </VerticalStackLayout>
                 <Label Grid.Row="8" 
                        Text="Category" />
                 <Entry Grid.Row="8"
