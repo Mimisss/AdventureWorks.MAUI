@@ -18,13 +18,22 @@ namespace AdventureWorks.ViewModelLayer
 
         private readonly IRepository<User>? repository;
 
+        private readonly IRepository<PhoneType>? phoneTypeRepository;
+
         public UserViewModel()
         {
         }
 
-        public UserViewModel(IRepository<User> repo)
+        public UserViewModel(IRepository<User> repo) : base()
         {
             repository = repo;
+        }
+
+        public UserViewModel(IRepository<User> repo, IRepository<PhoneType> phoneTypeRepo) : base()
+        {
+            repository = repo;
+
+            phoneTypeRepository = phoneTypeRepo;
         }
 
         public User? CurrentEntity
@@ -60,7 +69,7 @@ namespace AdventureWorks.ViewModelLayer
         {
             try
             {
-                // TODO: Get a User from a data store 
+                // Get a User from a data store 
                 if (repository != null)
                 {
                     CurrentEntity = await repository.GetAsync(id);
@@ -116,13 +125,12 @@ namespace AdventureWorks.ViewModelLayer
 
         public async Task<ObservableCollection<string>> GetPhoneTypesAsync()
         {
-            PhoneTypesList = await Task.FromResult(new ObservableCollection<string>
-            {                
-                "Home",
-                "Mobile",
-                "Work",
-                "Other"
-            });
+            if (phoneTypeRepository != null)
+            {
+                var list = await phoneTypeRepository.GetAsync();
+
+                PhoneTypesList = new ObservableCollection<string>(list.Select(row => row.TypeDescription));
+            }
 
             return PhoneTypesList;
         }

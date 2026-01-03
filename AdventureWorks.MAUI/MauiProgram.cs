@@ -26,6 +26,7 @@ namespace AdventureWorks.MAUI
 
             // Add classes for use in dependency injection
             builder.Services.AddScoped<IRepository<User>, UserRepository>();
+            builder.Services.AddScoped<IRepository<PhoneType>, PhoneTypeRepository>();
             builder.Services.AddScoped<UserViewModel>();
             builder.Services.AddScoped<UserDetailView>();
 
