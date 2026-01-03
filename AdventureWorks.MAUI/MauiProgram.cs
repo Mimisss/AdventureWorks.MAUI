@@ -1,6 +1,11 @@
 ﻿#if WINDOWS
 using AdventureWorks.MAUI.Platforms.Windows;
 #endif
+using AdventureWorks.DataLayer;
+using AdventureWorks.EntityLayer;
+using AdventureWorks.MAUI.Views;
+using AdventureWorks.ViewModelLayer;
+using Common.Library;
 using Microsoft.Extensions.Logging;
 
 namespace AdventureWorks.MAUI
@@ -18,6 +23,11 @@ namespace AdventureWorks.MAUI
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            // Add classes for use in dependency injection
+            builder.Services.AddScoped<IRepository<User>, UserRepository>();
+            builder.Services.AddScoped<UserViewModel>();
+            builder.Services.AddScoped<UserDetailView>();
 
 #if WINDOWS
             WindowsHelpers.SetWindowOptions(builder);

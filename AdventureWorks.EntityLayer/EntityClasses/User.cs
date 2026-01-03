@@ -34,7 +34,7 @@ namespace AdventureWorks.EntityLayer
 
         private DateTime birthDate = DateTime.Now.AddYears(-18);
 
-        private TimeSpan startTime = new TimeSpan(8, 0, 0);
+        private TimeSpan? startTime = new TimeSpan(8, 0, 0);
 
         public int UserId
         {
@@ -186,7 +186,7 @@ namespace AdventureWorks.EntityLayer
             }
         }
         
-        public TimeSpan StartTime
+        public TimeSpan? StartTime
         {
             get { return startTime; }
             set 

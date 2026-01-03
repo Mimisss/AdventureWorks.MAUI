@@ -1,5 +1,4 @@
 using AdventureWorks.ViewModelLayer;
-using System.Threading.Tasks;
 
 namespace AdventureWorks.MAUI.Views;
 
@@ -7,10 +6,12 @@ public partial class UserDetailView : ContentPage
 {
 	private readonly UserViewModel viewModel = new();
 
-	public UserDetailView()
+	public UserDetailView(UserViewModel viewModel)
 	{
 		InitializeComponent();
-	}
+
+        this.viewModel = viewModel;
+    }
 
     protected async override void OnAppearing()
     {
