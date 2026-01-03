@@ -12,6 +12,8 @@ namespace Common.Library
 
         private Exception? lastException = null;
 
+        protected const string REPO_NOT_SET = "Repository not set.";
+
         protected CommonBase()
         {
             Init();

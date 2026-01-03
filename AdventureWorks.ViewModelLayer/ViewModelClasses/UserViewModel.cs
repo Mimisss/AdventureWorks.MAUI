@@ -16,6 +16,17 @@ namespace AdventureWorks.ViewModelLayer
 
         private ObservableCollection<string> phoneTypesList = [];
 
+        private readonly IRepository<User>? repository;
+
+        public UserViewModel()
+        {
+        }
+
+        public UserViewModel(IRepository<User> repo)
+        {
+            repository = repo;
+        }
+
         public User? CurrentEntity
         {
             get => currentEntity;
@@ -50,24 +61,38 @@ namespace AdventureWorks.ViewModelLayer
             try
             {
                 // TODO: Get a User from a data store 
-                CurrentEntity = await Task.FromResult(new User
+                if (repository != null)
                 {
-                    UserId = id,
-                    LoginId = "SallyJones615",
-                    FirstName = "Sally",
-                    LastName = "Jones",
-                    Email = "Sallyj@jones.com",
-                    Phone = "615.987.3456",
-                    PhoneType = "Mobile",
-                    IsFullTime = true,
-                    IsEnrolledIn401k = true,
-                    IsEnrolledInFlexTime = false,
-                    IsEnrolledInHealthCare = true,
-                    IsEnrolledInHSA = false,
-                    IsEmployed = true,
-                    BirthDate = Convert.ToDateTime("1989-08-13"),
-                    StartTime = new TimeSpan(7, 30, 0)
-                });
+                    CurrentEntity = await repository.GetAsync(id);
+
+                    InfoMessage = (CurrentEntity != null) ? "User found" : $"User id={id} not found";
+                }
+                else
+                {
+                    LastErrorMessage = REPO_NOT_SET;
+
+                    InfoMessage = "Found a MOCK User";
+
+                    // MOCK Data
+                    CurrentEntity = await Task.FromResult(new User
+                    {
+                        UserId = id,
+                        LoginId = "SallyJones615",
+                        FirstName = "Sally",
+                        LastName = "Jones",
+                        Email = "Sallyj@jones.com",
+                        Phone = "615.987.3456",
+                        PhoneType = "Mobile",
+                        IsFullTime = true,
+                        IsEnrolledIn401k = true,
+                        IsEnrolledInFlexTime = false,
+                        IsEnrolledInHealthCare = true,
+                        IsEnrolledInHSA = false,
+                        IsEmployed = true,
+                        BirthDate = Convert.ToDateTime("1989-08-13"),
+                        StartTime = new TimeSpan(7, 30, 0)
+                    });
+                }
 
                 RowsAffected = 1;
             }
