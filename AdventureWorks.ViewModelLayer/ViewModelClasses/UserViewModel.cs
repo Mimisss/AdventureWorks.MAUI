@@ -14,6 +14,8 @@ namespace AdventureWorks.ViewModelLayer
     {
         private User? currentEntity = new();
 
+        private ObservableCollection<string> phoneTypesList = [];
+
         public User? CurrentEntity
         {
             get => currentEntity;
@@ -22,6 +24,17 @@ namespace AdventureWorks.ViewModelLayer
                 currentEntity = value;
 
                 RaisePropertyChanged(nameof(CurrentEntity));
+            }
+        }
+
+        public ObservableCollection<string> PhoneTypesList
+        {
+            get => phoneTypesList;
+            set
+            {
+                phoneTypesList = value;
+
+                RaisePropertyChanged(nameof(PhoneTypesList));
             }
         }
 
@@ -74,6 +87,19 @@ namespace AdventureWorks.ViewModelLayer
             System.Diagnostics.Debugger.Break();
 
             return await Task.FromResult(new User());
+        }
+
+        public async Task<ObservableCollection<string>> GetPhoneTypesAsync()
+        {
+            PhoneTypesList = await Task.FromResult(new ObservableCollection<string>
+            {                
+                "Home",
+                "Mobile",
+                "Work",
+                "Other"
+            });
+
+            return PhoneTypesList;
         }
     }
 }

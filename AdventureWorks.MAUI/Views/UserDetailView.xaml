@@ -118,7 +118,7 @@
                     </HorizontalStackLayout>
                     <HorizontalStackLayout>
                         <Picker VerticalTextAlignment="Center"
-                                ItemsSource="{StaticResource phoneTypes}"
+                                ItemsSource="{Binding PhoneTypesList}"
                                 SelectedItem="{Binding CurrentEntity.PhoneType}">
                         </Picker>
                     </HorizontalStackLayout>

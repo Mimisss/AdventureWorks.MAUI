@@ -1,4 +1,5 @@
 using AdventureWorks.ViewModelLayer;
+using System.Threading.Tasks;
 
 namespace AdventureWorks.MAUI.Views;
 
@@ -18,12 +19,16 @@ public partial class UserDetailView : ContentPage
 		// Set the BindingContext to the ViewModel
 		BindingContext = viewModel;
 
-		// Retrieve a User
-		await viewModel.GetAsync(1);
+		// Get the Phone Types
+		await viewModel.GetPhoneTypesAsync();
+
+        // Retrieve a User
+        await viewModel.GetAsync(1);
     }
 
-	private void SaveButton_Clicked(object sender, EventArgs e)
-	{
-		// TODO: Respond to the event here		
+    private async void SaveButton_Clicked(object sender, EventArgs e)
+    {
+        // TODO: Respond to the event here		
+        await viewModel.SaveAsync();
     }
 }
