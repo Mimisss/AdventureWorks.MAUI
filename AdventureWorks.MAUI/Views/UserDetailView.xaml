@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:partial="clr-namespace:AdventureWorks.MAUI.ViewsPartial"
-             xmlns:vm="clr-namespace:AdventureWorks.ViewModelLayer;assembly=AdventureWorks.ViewModelLayer"
+             xmlns:vm="clr-namespace:AdventureWorks.MAUI.MauiViewModelClasses"
              xmlns:converters="clr-namespace:Common.Library.MAUI.Converters;assembly=Common.Library.MAUI"
              x:Class="AdventureWorks.MAUI.Views.UserDetailView"
              x:DataType="vm:UserViewModel"
@@ -129,7 +129,7 @@
                     Spacing="5">
                     <ImageButton Source="save.png"
                                  ToolTipProperties.Text="Save"
-                                 Clicked="SaveButton_Clicked"/>
+                                 Command="{Binding SaveCommand}"/>
                     <ImageButton Source="cancel.png"
                                  ToolTipProperties.Text="Cancel"/>
                 </HorizontalStackLayout>
