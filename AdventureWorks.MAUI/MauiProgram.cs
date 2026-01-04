@@ -1,12 +1,8 @@
 ﻿#if WINDOWS
 using AdventureWorks.MAUI.Platforms.Windows;
 #endif
-using AdventureWorks.DataLayer;
-using AdventureWorks.EntityLayer;
-using AdventureWorks.MAUI.Views;
-using AdventureWorks.ViewModelLayer;
-using Common.Library;
 using Microsoft.Extensions.Logging;
+using AdventureWorks.MAUI.ExtensionClasses;
 
 namespace AdventureWorks.MAUI
 {
@@ -25,10 +21,7 @@ namespace AdventureWorks.MAUI
                 });
 
             // Add classes for use in dependency injection
-            builder.Services.AddScoped<IRepository<User>, UserRepository>();
-            builder.Services.AddScoped<IRepository<PhoneType>, PhoneTypeRepository>();
-            builder.Services.AddScoped<MauiViewModelClasses.UserViewModel>();
-            builder.Services.AddScoped<UserDetailView>();
+            builder.Services.AddMyServices();
 
 #if WINDOWS
             WindowsHelpers.SetWindowOptions(builder);
