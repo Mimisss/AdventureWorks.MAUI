@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:partial="clr-namespace:AdventureWorks.MAUI.ViewsPartial"
+             xmlns:vm="clr-namespace:AdventureWorks.MAUI.MauiViewModelClasses"
+             xmlns:model="clr-namespace:AdventureWorks.EntityLayer;assembly=AdventureWorks.EntityLayer"
+             x:Class="AdventureWorks.MAUI.Views.ProductListView"
+             x:DataType="vm:ProductViewModel"
+             Title="Product List">
+
+    <Border Style="{StaticResource Border.Page}">
+        <Grid Style="{StaticResource Grid.Page}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <partial:HeaderView
+                ViewTitle="Product List"
+                ViewDescription="List of system products." />
+
+            <CollectionView Grid.Row="1"
+                            SelectionMode="Single"
+                            ItemsSource="{Binding Products}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Product">
+                        <VerticalStackLayout Spacing="5">
+                            <HorizontalStackLayout>
+                                <Label FontAttributes="Bold"
+                                       FontSize="Title"
+                                       Text="{Binding Name}" />
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label FontAttributes="Bold"
+                                       Text="Color" />
+                                <Label Text="{Binding Color}" />
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label FontAttributes="Bold"
+                                       Text="Price" />
+                                <Label Text="{Binding ListPrice, StringFormat='{0:c}'}"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <ImageButton Source="edit.png"
+                                             Aspect="Center"
+                                             HeightRequest="24"
+                                             ToolTipProperties.Text="Edit Product" />
+                                <ImageButton Source="trash.png"                                                 
+                                             Aspect="Center"
+                                             HeightRequest="24"
+                                             ToolTipProperties.Text="Delete Product" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Border>
+</ContentPage>

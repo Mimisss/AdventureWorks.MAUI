@@ -15,7 +15,7 @@
         <ShellContent Title="Users"
             ContentTemplate="{DataTemplate views:UserListView}" />
         <ShellContent Title="Products"
-            ContentTemplate="{DataTemplate views:ProductDetailView}" />
+            ContentTemplate="{DataTemplate views:ProductListView}" />
         <ShellContent Title="Customers"
             ContentTemplate="{DataTemplate views:CustomerDetailView}" />
         <Tab Title="Maintenance">
