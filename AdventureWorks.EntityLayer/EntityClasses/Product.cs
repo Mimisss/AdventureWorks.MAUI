@@ -1,6 +1,6 @@
 ﻿using Common.Library;
 
-namespace AdventureWorks.EntityLayer.EntityClasses
+namespace AdventureWorks.EntityLayer
 {
     public partial class Product : EntityBase
     {
