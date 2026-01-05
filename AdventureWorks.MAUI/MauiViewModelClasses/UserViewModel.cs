@@ -38,5 +38,17 @@ namespace AdventureWorks.MAUI.MauiViewModelClasses
         {
             await Shell.Current.GoToAsync($"{nameof(Views.UserDetailView)}?id={id}");
         }
+
+        public override async Task<User?> SaveAsync()
+        {
+            User? result = await base.SaveAsync();
+
+            if (result != null)
+            {
+                await Shell.Current.GoToAsync("..");
+            }
+
+            return result;
+        }
     }
 }

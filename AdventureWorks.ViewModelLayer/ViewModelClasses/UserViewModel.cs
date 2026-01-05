@@ -153,7 +153,7 @@ namespace AdventureWorks.ViewModelLayer
         public async virtual Task<User?> SaveAsync()
         {
             // TODO: Write code to save data
-            System.Diagnostics.Debugger.Break();
+            //System.Diagnostics.Debugger.Break();
 
             return await Task.FromResult(new User());
         }
