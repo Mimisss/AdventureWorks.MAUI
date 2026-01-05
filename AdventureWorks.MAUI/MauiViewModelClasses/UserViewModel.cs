@@ -25,6 +25,8 @@ namespace AdventureWorks.MAUI.MauiViewModelClasses
 
         public ICommand? EditCommand { get; private set; }
 
+        public ICommand? CancelCommand { get; private set; }
+
         public override void Init()
         {
             base.Init();
@@ -32,6 +34,8 @@ namespace AdventureWorks.MAUI.MauiViewModelClasses
             SaveCommand = new Command(async () => await SaveAsync());
 
             EditCommand = new Command<int>(async (int id) => await EditAsync(id));
+
+            CancelCommand = new Command(async () => await CancelAsync());
         }
 
         public async Task EditAsync(int id)
@@ -49,6 +53,11 @@ namespace AdventureWorks.MAUI.MauiViewModelClasses
             }
 
             return result;
+        }
+
+        public async Task CancelAsync()
+        {
+            await Shell.Current.GoToAsync("..");
         }
     }
 }

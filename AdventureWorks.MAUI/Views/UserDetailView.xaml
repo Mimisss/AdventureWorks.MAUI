@@ -131,7 +131,8 @@
                                  ToolTipProperties.Text="Save"
                                  Command="{Binding SaveCommand}"/>
                     <ImageButton Source="cancel.png"
-                                 ToolTipProperties.Text="Cancel"/>
+                                 ToolTipProperties.Text="Cancel"
+                                 Command="{Binding CancelCommand}"/>
                 </HorizontalStackLayout>
             </Grid>
         </ScrollView>
