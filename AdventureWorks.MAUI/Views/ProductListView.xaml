@@ -6,6 +6,7 @@
              xmlns:model="clr-namespace:AdventureWorks.EntityLayer;assembly=AdventureWorks.EntityLayer"
              x:Class="AdventureWorks.MAUI.Views.ProductListView"
              x:DataType="vm:ProductViewModel"
+             x:Name="ProductListPage"
              Title="Product List">
 
     <Border Style="{StaticResource Border.Page}">
@@ -44,7 +45,9 @@
                                 <ImageButton Source="edit.png"
                                              Aspect="Center"
                                              HeightRequest="24"
-                                             ToolTipProperties.Text="Edit Product" />
+                                             ToolTipProperties.Text="Edit Product"
+                                             CommandParameter="{Binding ProductId}"
+                                             Command="{Binding Source={x:Reference ProductListPage}, Path=BindingContext.EditCommand}"/>
                                 <ImageButton Source="trash.png"                                                 
                                              Aspect="Center"
                                              HeightRequest="24"
