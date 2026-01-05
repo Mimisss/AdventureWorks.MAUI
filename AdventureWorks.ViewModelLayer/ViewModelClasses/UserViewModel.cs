@@ -20,6 +20,8 @@ namespace AdventureWorks.ViewModelLayer
 
         private readonly IRepository<PhoneType>? phoneTypeRepository;
 
+        private ObservableCollection<User> users = new();
+
         public UserViewModel()
         {
         }
@@ -58,10 +60,43 @@ namespace AdventureWorks.ViewModelLayer
             }
         }
 
+        public ObservableCollection<User> Users
+        {
+            get => users;
+            set
+            {
+                users = value;
+
+                RaisePropertyChanged(nameof(Users));
+            }
+        }
+
         // Return a list of users that can be bound to a collection-type control
         public async Task<ObservableCollection<User>> GetAsync()
         {
-            return await Task.FromResult(new ObservableCollection<User>());
+            RowsAffected = 0;
+
+            try
+            {
+                if (repository == null)
+                {
+                    LastErrorMessage = REPO_NOT_SET;
+                }
+                else
+                {
+                    Users = await repository.GetAsync();
+
+                    RowsAffected = Users.Count;
+
+                    InfoMessage = $"Found {RowsAffected} users";
+                }
+            }
+            catch (Exception ex)
+            {
+                PublishException(ex);
+            }
+
+            return Users;
         }
 
         // Set the CurrentEntity property to a single user object, then return it

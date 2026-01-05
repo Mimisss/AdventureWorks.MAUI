@@ -34,6 +34,8 @@ namespace AdventureWorks.MAUI.ExtensionClasses
         {
             // Add View Classes
             services.AddScoped<Views.UserDetailView>();
+
+            services.AddScoped<Views.UserListView>();
         }
     }
 }

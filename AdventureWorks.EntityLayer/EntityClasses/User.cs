@@ -195,5 +195,10 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(StartTime));
             }            
         }
+
+        public string FullName
+        {
+            get { return $"{FirstName} {LastName}"; }
+        }    
     }
 }

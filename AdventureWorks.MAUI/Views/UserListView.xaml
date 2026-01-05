@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:partial="clr-namespace:AdventureWorks.MAUI.ViewsPartial"
+             xmlns:vm="clr-namespace:AdventureWorks.MAUI.MauiViewModelClasses"
+             xmlns:model="clr-namespace:AdventureWorks.EntityLayer;assembly=AdventureWorks.EntityLayer"
              x:Class="AdventureWorks.MAUI.Views.UserListView"
+             x:DataType="vm:UserViewModel"
              Title="User List">
 
     <Border Style="{StaticResource Border.Page}">
-        <VerticalStackLayout 
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            Spacing="10">
-            <Label Text="User List"            
-                   FontSize="Header"
-                   HorizontalOptions="Center" />
-            <Button Text="Details"
-                    Clicked="NavigateToDetail_Clicked" />
-        </VerticalStackLayout>
+        <Grid Style="{StaticResource Grid.Page}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <partial:HeaderView
+                ViewTitle="User List"
+                ViewDescription="List of system users." />
+
+            <ListView Grid.Row="1"
+                      SeparatorColor="LightGray"
+                      SeparatorVisibility="Default"
+                      ItemsSource="{Binding Users}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:User">
+                        <TextCell Text="{Binding FullName}"
+                                  Detail="{Binding Email}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Border>
 </ContentPage>
