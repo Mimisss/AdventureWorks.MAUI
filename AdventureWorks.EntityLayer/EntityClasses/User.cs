@@ -200,5 +200,10 @@ namespace AdventureWorks.EntityLayer
         {
             get { return $"{FirstName} {LastName}"; }
         }    
+
+        public string LastNameFirstName
+        {
+            get { return $"{LastName}, {FirstName}"; }
+        }        
     }
 }

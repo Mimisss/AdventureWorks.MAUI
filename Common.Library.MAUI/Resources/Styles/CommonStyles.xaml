@@ -39,4 +39,11 @@
         <Setter Property="HorizontalOptions" Value="Fill" />
         <Setter Property="VerticalOptions" Value="Fill" />
     </Style>
+    <Style TargetType="BoxView"
+           x:Key="Grid.Item.Separator">
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="BackgroundColor" Value="LightGray" />
+        <Setter Property="HeightRequest" Value="1" />
+        <Setter Property="Margin" Value="0,0,0,10" />
+    </Style>
 </ResourceDictionary>

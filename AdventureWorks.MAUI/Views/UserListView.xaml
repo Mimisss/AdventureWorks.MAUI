@@ -20,13 +20,40 @@
                 ViewDescription="List of system users." />
 
             <ListView Grid.Row="1"
-                      SeparatorColor="LightGray"
-                      SeparatorVisibility="Default"
+                      HasUnevenRows="True"
                       ItemsSource="{Binding Users}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:User">
-                        <TextCell Text="{Binding FullName}"
-                                  Detail="{Binding Email}" />
+                        <ViewCell>
+                            <VerticalStackLayout Spacing="5"
+                                                 Margin="5">
+                                <HorizontalStackLayout>
+                                    <Label FontAttributes="Bold"
+                                           FontSize="Title"
+                                           Text="{Binding LastNameFirstName}" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label FontAttributes="Bold"
+                                           Text="Email" />
+                                    <Label Text="{Binding Email}" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label FontAttributes="Bold"
+                                           Text="Phone" />
+                                    <Label Text="{Binding Phone}" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <ImageButton Source="edit.png"
+                                                 Aspect="Center"
+                                                 HeightRequest="24"
+                                                 ToolTipProperties.Text="Edit User" />
+                                    <ImageButton Source="trash.png"                                                 
+                                                 Aspect="Center"
+                                                 HeightRequest="24"
+                                                 ToolTipProperties.Text="Delete User" />
+                                </HorizontalStackLayout>                                
+                            </VerticalStackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
