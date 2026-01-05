@@ -21,9 +21,4 @@ public partial class UserListView : ContentPage
 
 		await viewModel.GetAsync();
 	}
-
-    private async void NavigateToDetail_Clicked(object sender, EventArgs e)
-	{
-		await Shell.Current.GoToAsync(nameof(Views.UserDetailView));
-    }
 }

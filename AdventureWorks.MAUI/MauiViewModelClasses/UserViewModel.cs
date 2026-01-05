@@ -23,11 +23,20 @@ namespace AdventureWorks.MAUI.MauiViewModelClasses
 
         public ICommand? SaveCommand { get; private set; }
 
+        public ICommand? EditCommand { get; private set; }
+
         public override void Init()
         {
             base.Init();
 
             SaveCommand = new Command(async () => await SaveAsync());
+
+            EditCommand = new Command<int>(async (int id) => await EditAsync(id));
+        }
+
+        public async Task EditAsync(int id)
+        {
+            await Shell.Current.GoToAsync($"{nameof(Views.UserDetailView)}?id={id}");
         }
     }
 }

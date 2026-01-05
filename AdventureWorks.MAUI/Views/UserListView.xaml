@@ -5,7 +5,8 @@
              xmlns:vm="clr-namespace:AdventureWorks.MAUI.MauiViewModelClasses"
              xmlns:model="clr-namespace:AdventureWorks.EntityLayer;assembly=AdventureWorks.EntityLayer"
              x:Class="AdventureWorks.MAUI.Views.UserListView"
-             x:DataType="vm:UserViewModel"
+             x:Name="UserListPage"
+             x:DataType="vm:UserViewModel"             
              Title="User List">
 
     <Border Style="{StaticResource Border.Page}">
@@ -46,7 +47,9 @@
                                     <ImageButton Source="edit.png"
                                                  Aspect="Center"
                                                  HeightRequest="24"
-                                                 ToolTipProperties.Text="Edit User" />
+                                                 ToolTipProperties.Text="Edit User" 
+                                                 CommandParameter="{Binding UserId}"
+                                                 Command="{Binding Source={x:Reference UserListPage}, Path=BindingContext.EditCommand}"/>
                                     <ImageButton Source="trash.png"                                                 
                                                  Aspect="Center"
                                                  HeightRequest="24"

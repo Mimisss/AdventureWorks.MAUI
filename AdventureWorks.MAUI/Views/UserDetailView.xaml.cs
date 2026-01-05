@@ -2,6 +2,7 @@ using AdventureWorks.MAUI.MauiViewModelClasses;
 
 namespace AdventureWorks.MAUI.Views;
 
+[QueryProperty(nameof(UserId), "id")]
 public partial class UserDetailView : ContentPage
 {
 	private readonly UserViewModel viewModel = new();
@@ -24,6 +25,8 @@ public partial class UserDetailView : ContentPage
 		await viewModel.GetPhoneTypesAsync();
 
         // Retrieve a User
-        await viewModel.GetAsync(1);
+        await viewModel.GetAsync(UserId);
     }
+
+    public int UserId { get; set; }
 }
