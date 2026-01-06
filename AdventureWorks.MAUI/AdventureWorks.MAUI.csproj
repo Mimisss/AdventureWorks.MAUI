@@ -79,6 +79,9 @@
 	  <MauiXaml Update="ViewsPartial\HeaderView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ColorDetailView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ColorListView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

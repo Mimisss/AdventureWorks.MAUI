@@ -5,8 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AdventureWorks.MAUI"
     xmlns:views="clr-namespace:AdventureWorks.MAUI.Views"
-    Title="{StaticResource ApplicationTitle}"
-    Style="{StaticResource ShellStyle}">
+    Title="{StaticResource ApplicationTitle}">
 
     <TabBar>
         <!-- ShellContent references a single page in the application to which you want to navigate -->

@@ -8,8 +8,7 @@
     </x:Double>
 
     <Style TargetType="Page" ApplyToDerivedTypes="True">
-        <Setter Property="Padding" Value="0"/>
-        <Setter Property="BackgroundColor" Value="#ac99ea" />
+        <Setter Property="Padding" Value="0"/>        
     </Style>    
     <Style TargetType="Grid"
            x:Key="Grid.Page">        
@@ -24,17 +23,8 @@
     <Style TargetType="HorizontalStackLayout">
         <Setter Property="Spacing" Value="5" />
     </Style>
-    <Style TargetType="Element"
-           x:Key="ShellStyle">
-        <Setter Property="Shell.BackgroundColor" Value="Blue" />
-        <Setter Property="Shell.TitleColor" Value="White" />
-    </Style>
     <Style TargetType="Border"
            x:Key="Border.Page">
-        <Setter Property="Background" Value="White" />
-        <Setter Property="Stroke" Value="White" />
-        <Setter Property="StrokeThickness" Value="1" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10" />
         <Setter Property="Margin" Value="20" />
         <Setter Property="HorizontalOptions" Value="Fill" />
         <Setter Property="VerticalOptions" Value="Fill" />

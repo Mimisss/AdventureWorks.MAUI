@@ -4,11 +4,9 @@
              x:Class="AdventureWorks.MAUI.Views.CustomerDetailView"
              Title="Customer Information">
 
-    <Border Style="{StaticResource Border.Page}">
-        <Label Text="Customer Information"
-               FontSize="Large"
-               VerticalOptions="Center"
-               HorizontalOptions="Center" />
-    </Border>
-    
+    <Label Text="Customer Information"
+            FontSize="Large"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+   
 </ContentPage>

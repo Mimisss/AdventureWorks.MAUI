@@ -4,10 +4,9 @@
              x:Class="AdventureWorks.MAUI.Views.PhoneTypesListView"
              Title="Phone Types List">
 
-    <Border Style="{StaticResource Border.Page}">
-        <Label Text="Phone Types List"
-               FontSize="Large"
-               VerticalOptions="Center"
-               HorizontalOptions="Center" />
-    </Border>
+
+    <Label Text="Phone Types List"
+           FontSize="Large"
+           VerticalOptions="Center"
+           HorizontalOptions="Center" />
 </ContentPage>

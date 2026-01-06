@@ -1,13 +1,72 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:partial="clr-namespace:AdventureWorks.MAUI.ViewsPartial"
+             xmlns:vm="clr-namespace:AdventureWorks.MAUI.MauiViewModelClasses"
+             xmlns:model="clr-namespace:AdventureWorks.EntityLayer;assembly=AdventureWorks.EntityLayer"
              x:Class="AdventureWorks.MAUI.Views.ColorListView"
+             x:DataType="vm:ColorViewModel"
+             x:Name="ColorListPage"
              Title="Color List">
 
-    <Border Style="{StaticResource Border.Page}">
-        <Label Text="Color List"
-               FontSize="Large"
-               VerticalOptions="Center"
-               HorizontalOptions="Center" />        
-    </Border>
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <partial:HeaderView
+                ViewTitle="Color List"
+                ViewDescription="List of system colors." />
+
+        <CarouselView Grid.Row="1"
+                          IndicatorView="colorIndicators"
+                          ItemsSource="{Binding Colors}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="model:Color">
+                    <StackLayout>
+                        <Frame HasShadow="True"
+                                   BorderColor="DarkGray"
+                                   CornerRadius="5"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="CenterAndExpand">
+                            <Grid Margin="20"
+                                      RowDefinitions="Auto,Auto"
+                                      ColumnDefinitions="Auto,*"
+                                      RowSpacing="20">
+                                <Rectangle Grid.Row="0"
+                                               Grid.Column="0"
+                                               BackgroundColor="{Binding ColorName}"
+                                               WidthRequest="40"
+                                               HeightRequest="40"
+                                               Margin="10" />
+                                <Label Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontSize="Large"
+                                           Text="{Binding ColorName}" />
+                                <HorizontalStackLayout Grid.Row="1"
+                                                           Grid.ColumnSpan="2">
+                                    <ImageButton Source="edit.png"
+                                                     ToolTipProperties.Text="Edit Color"
+                                                     CommandParameter="{Binding ColorId}"
+                                                     Command="{Binding Source={x:Reference ColorListPage}, Path=BindingContext.EditCommand}" />
+                                    <ImageButton Source="trash.png"
+                                                     ToolTipProperties.Text="Delete Color" />
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <IndicatorView x:Name="colorIndicators"
+                           Grid.Row="2"
+                           HorizontalOptions="Center"
+                           Margin="5"
+                           IndicatorSize="20"
+                           IndicatorColor="LightGray"
+                           SelectedIndicatorColor="DarkGray" />
+    </Grid>
 </ContentPage>

@@ -24,6 +24,8 @@ namespace AdventureWorks.MAUI.ExtensionClasses
             services.AddScoped<IRepository<PhoneType>, PhoneTypeRepository>();
 
             services.AddScoped<IRepository<Product>, ProductRepository>();
+
+            services.AddScoped<IRepository<EntityLayer.Color>, ColorRepository>();
         }
 
         private static void AddViewModels(this IServiceCollection services)
@@ -32,6 +34,8 @@ namespace AdventureWorks.MAUI.ExtensionClasses
             services.AddScoped<MauiViewModelClasses.UserViewModel>();
 
             services.AddScoped<MauiViewModelClasses.ProductViewModel>();
+
+            services.AddScoped<MauiViewModelClasses.ColorViewModel>();
         }
 
         private static void AddViews(this IServiceCollection services)
@@ -44,6 +48,10 @@ namespace AdventureWorks.MAUI.ExtensionClasses
             services.AddScoped<Views.ProductDetailView>();
 
             services.AddScoped<Views.ProductListView>();
+
+            services.AddScoped<Views.ColorDetailView>();
+
+            services.AddScoped<Views.ColorListView>();
         }
     }
 }

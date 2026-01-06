@@ -7,118 +7,116 @@
              x:DataType="vm:ProductViewModel"
              Title="Product Information">
 
-    <Border Style="{StaticResource Border.Page}">
-        <ScrollView>
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+    <ScrollView>
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
                   ColumnDefinitions="Auto,*"
                   Style="{StaticResource Grid.Page}">
 
-                <partial:HeaderView
+            <partial:HeaderView
                     Grid.Row="0"
                     Grid.ColumnSpan="2"
                     ViewTitle="Product Information"
                     ViewDescription="Modify product information." />
 
-                <Label Grid.Row="1" 
+            <Label Grid.Row="1" 
                        Text="Product Name" />
-                <Entry Grid.Row="1"
+            <Entry Grid.Row="1"
                        Grid.Column="1" 
                        Text="{Binding CurrentEntity.Name}" />
-                <Label Grid.Row="2" 
+            <Label Grid.Row="2" 
                        Text="Product Number" />
-                <Entry Grid.Row="2"
+            <Entry Grid.Row="2"
                        Grid.Column="1" 
                        Text="{Binding CurrentEntity.ProductNumber}" />
-                <Label Grid.Row="3" 
+            <Label Grid.Row="3" 
                        Text="Color" />
-                <Entry Grid.Row="3"
+            <Entry Grid.Row="3"
                        Grid.Column="1" 
                        Text="{Binding CurrentEntity.Color}" />
-                <Label Grid.Row="4" 
+            <Label Grid.Row="4" 
                        Text="Cost" />
-                <HorizontalStackLayout Grid.Row="4"
+            <HorizontalStackLayout Grid.Row="4"
                                        Grid.Column="1">
-                    <Entry Text="{Binding CurrentEntity.StandardCost}" />
-                    <Stepper Value="{Binding CurrentEntity.StandardCost}"
+                <Entry Text="{Binding CurrentEntity.StandardCost}" />
+                <Stepper Value="{Binding CurrentEntity.StandardCost}"
                              Minimum="1"                             
                              Maximum="{Binding CurrentEntity.ListPrice}"
                              Increment="1"/>
-                </HorizontalStackLayout>
-                <Label Grid.Row="5" 
+            </HorizontalStackLayout>
+            <Label Grid.Row="5" 
                        Text="Price" />
-                <HorizontalStackLayout Grid.Row="5"
+            <HorizontalStackLayout Grid.Row="5"
                                        Grid.Column="1">
-                    <Entry Text="{Binding CurrentEntity.ListPrice}" />
-                    <Stepper Value="{Binding CurrentEntity.ListPrice}"                             
+                <Entry Text="{Binding CurrentEntity.ListPrice}" />
+                <Stepper Value="{Binding CurrentEntity.ListPrice}"                             
                              Minimum="{Binding CurrentEntity.StandardCost}"
                              Maximum="9999"
                              Increment="1" />
-                </HorizontalStackLayout>
-                <Label Grid.Row="6" 
+            </HorizontalStackLayout>
+            <Label Grid.Row="6" 
                        Text="Size" />
-                <Entry Grid.Row="6"
+            <Entry Grid.Row="6"
                        Grid.Column="1" 
                        Text="{Binding CurrentEntity.Size}" />
-                <Label Grid.Row="7" 
+            <Label Grid.Row="7" 
                        Text="Weight" />
-                <VerticalStackLayout Grid.Row="7"
+            <VerticalStackLayout Grid.Row="7"
                                      Grid.Column="1">
-                    <Slider x:Name="weight"
+                <Slider x:Name="weight"
                             Value="{Binding CurrentEntity.Weight}"
                             Minimum="1"
                             Maximum="100"
                             ValueChanged="Weight_Changed" />
-                    <Label Text="{Binding CurrentEntity.Weight}" />
-                </VerticalStackLayout>
-                <Label Grid.Row="8" 
+                <Label Text="{Binding CurrentEntity.Weight}" />
+            </VerticalStackLayout>
+            <Label Grid.Row="8" 
                        Text="Category" />
-                <Entry Grid.Row="8"
+            <Entry Grid.Row="8"
                        Grid.Column="1" 
                        Text="{Binding CurrentEntity.ProductCategoryId}" />
-                <Label Grid.Row="9" 
+            <Label Grid.Row="9" 
                        Text="Model" />
-                <Entry Grid.Row="9"
+            <Entry Grid.Row="9"
                        Grid.Column="1" 
                        Text="{Binding CurrentEntity.ProductModelId}" />
-                <Label Grid.Row="10" 
+            <Label Grid.Row="10" 
                        Text="Selling Start Date" />
-                <DatePicker Grid.Row="10"
+            <DatePicker Grid.Row="10"
                             Grid.Column="1" 
                             Date="{Binding CurrentEntity.SellStartDate}" />
-                <Label Grid.Row="11" 
+            <Label Grid.Row="11" 
                        Text="Selling End Date" />
-                <DatePicker Grid.Row="11"
+            <DatePicker Grid.Row="11"
                             Grid.Column="1" 
                             Date="{Binding CurrentEntity.SellEndDate}" />
-                <Label Grid.Row="12" 
+            <Label Grid.Row="12" 
                        Text="Discontinued Date" />
-                <DatePicker Grid.Row="12"
+            <DatePicker Grid.Row="12"
                             Grid.Column="1" 
                             Date="{Binding CurrentEntity.DiscontinuedDate}" />
-                <Label Grid.Row="13"
+            <Label Grid.Row="13"
                        Text="Product Picture" />
-                <Image Grid.Row="13"
+            <Image Grid.Row="13"
                        Grid.Column="1"
                        HorizontalOptions="Start"
                        Aspect="Center"
                        Source="product.jpg" />
-                <Label Grid.Row="14"
+            <Label Grid.Row="14"
                        Text="Product Notes" />
-                <Editor Grid.Row="14"
+            <Editor Grid.Row="14"
                         Grid.Column="1"
                         HeightRequest="100" />
-                <HorizontalStackLayout
+            <HorizontalStackLayout
                     Grid.Row="15"
                     Grid.Column="1">
-                    <ImageButton Source="save.png"
+                <ImageButton Source="save.png"
                                  ToolTipProperties.Text="Save Data"                                 
                                  Command="{Binding SaveCommand}"/>
-                    <ImageButton Source="cancel.png"
+                <ImageButton Source="cancel.png"
                                  ToolTipProperties.Text="Cancel Changes"
                                  Command="{Binding CancelCommand}"/>
-                </HorizontalStackLayout>
-            </Grid>
-        </ScrollView>
-    </Border>
-    
+            </HorizontalStackLayout>
+        </Grid>
+    </ScrollView>
+
 </ContentPage>
