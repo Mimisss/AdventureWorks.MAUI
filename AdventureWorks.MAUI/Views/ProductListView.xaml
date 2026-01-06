@@ -52,6 +52,7 @@
                                          HeightRequest="24"
                                          ToolTipProperties.Text="Delete Product" />
                         </HorizontalStackLayout>
+                        <BoxView Style="{StaticResource Grid.Item.Separator}" />
                     </VerticalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

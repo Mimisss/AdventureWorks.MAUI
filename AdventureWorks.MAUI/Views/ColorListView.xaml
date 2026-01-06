@@ -65,7 +65,7 @@
                            Grid.Row="2"
                            HorizontalOptions="Center"
                            Margin="5"
-                           IndicatorSize="20"
+                           IndicatorSize="10"
                            IndicatorColor="LightGray"
                            SelectedIndicatorColor="DarkGray" />
     </Grid>
