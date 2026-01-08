@@ -22,12 +22,18 @@ namespace AdventureWorks.MAUI.MauiViewModelClasses
 
         public async Task AcceptPolicyAsync()
         {
-            await Shell.Current.Navigation.PopAsync();
+            //await Shell.Current.Navigation.PopAsync();
+            string ret = $"..?lastPage={nameof(Views.PrivacyPolicyView)}&isPrivacyPolicyAccepted=true";
+
+            await Shell.Current.GoToAsync(ret);
         }
 
         public async Task DeclinePolicyAsync()
         {
-            await Shell.Current.Navigation.PopAsync();
+            string ret = $"..?lastPage={nameof(Views.PrivacyPolicyView)}&isPrivacyPolicyAccepted=false";
+
+            await Shell.Current.GoToAsync(ret);
+
         }
     }
 }
