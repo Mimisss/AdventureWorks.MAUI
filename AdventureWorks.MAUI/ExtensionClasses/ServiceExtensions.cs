@@ -36,6 +36,10 @@ namespace AdventureWorks.MAUI.ExtensionClasses
             services.AddScoped<MauiViewModelClasses.ProductViewModel>();
 
             services.AddScoped<MauiViewModelClasses.ColorViewModel>();
+
+            services.AddScoped<MauiViewModelClasses.PrivacyPolicyViewModel>();
+
+            services.AddScoped<MauiViewModelClasses.LoginViewModel>();
         }
 
         private static void AddViews(this IServiceCollection services)
@@ -52,6 +56,10 @@ namespace AdventureWorks.MAUI.ExtensionClasses
             services.AddScoped<Views.ColorDetailView>();
 
             services.AddScoped<Views.ColorListView>();
+
+            services.AddScoped<Views.PrivacyPolicyView>();
+
+            services.AddScoped<Views.LoginView>();
         }
     }
 }

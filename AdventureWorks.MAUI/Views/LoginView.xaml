@@ -2,10 +2,18 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:partial="clr-namespace:AdventureWorks.MAUI.ViewsPartial"
+             xmlns:vm="clr-namespace:AdventureWorks.MAUI.MauiViewModelClasses"
              x:Class="AdventureWorks.MAUI.Views.LoginView"
+             x:DataType="vm:LoginViewModel"
              Title="Login">
 
-
+    <ContentPage.Resources>
+        <Style TargetType="Button"
+               x:Key="flexButton">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </ContentPage.Resources>
+    
     <ScrollView>
         <Grid RowDefinitions="Auto,Auto,Auto,Auto" 
                   ColumnDefinitions="Auto,*"
@@ -26,12 +34,18 @@
                        Grid.Column="1"
                        IsPassword="True"
                        Text=""/>
-            <HorizontalStackLayout
-                    Grid.Row="3"
-                    Grid.Column="1">
-                <Button Text="Login" />
-                <Button Text="Cancel" />
-            </HorizontalStackLayout>
+            <FlexLayout Grid.Row="3"
+                        Grid.Column="1"
+                        Wrap="Wrap"
+                        Direction="Row">
+                <Button Text="Read Privacy Policy"
+                        Style="{StaticResource flexButton}"
+                        Command="{Binding PrivacyPolicyDisplay}" />
+                <Button Text="Login"
+                        Style="{StaticResource flexButton}" />
+                <Button Text="Cancel"
+                        Style="{StaticResource flexButton}" />
+            </FlexLayout>
         </Grid>
     </ScrollView>
 </ContentPage>
