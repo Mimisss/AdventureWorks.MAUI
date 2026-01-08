@@ -23,14 +23,7 @@ public partial class LoginView : ContentPage
 
 		if (LastPage != null && LastPage == nameof(Views.PrivacyPolicyView))
 		{
-			if (IsPrivacyPolicyAccepted)
-			{
-				Console.WriteLine("Privacy Policy was accepted");
-			}
-			else
-			{
-				Console.WriteLine("Privacy Policy was not accepted");
-			}
+			viewModel.Settings.IsPrivacyPolicyAccepted = IsPrivacyPolicyAccepted;
 		}
 
 		LastPage = null;

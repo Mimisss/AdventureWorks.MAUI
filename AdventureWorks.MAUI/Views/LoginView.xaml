@@ -42,7 +42,8 @@
                         Style="{StaticResource flexButton}"
                         Command="{Binding PrivacyPolicyDisplay}" />
                 <Button Text="Login"
-                        Style="{StaticResource flexButton}" />
+                        Style="{StaticResource flexButton}"
+                        IsEnabled="{Binding Settings.IsPrivacyPolicyAccepted}" />
                 <Button Text="Cancel"
                         Style="{StaticResource flexButton}" />
             </FlexLayout>

@@ -14,6 +14,8 @@ namespace AdventureWorks.MAUI.ExtensionClasses
             AddViewModels(services);
 
             AddViews(services);
+
+            AddOthers(services);
         }
 
         private static void AddRepositories(this IServiceCollection services)
@@ -60,6 +62,12 @@ namespace AdventureWorks.MAUI.ExtensionClasses
             services.AddScoped<Views.PrivacyPolicyView>();
 
             services.AddScoped<Views.LoginView>();
+        }
+
+        private static void AddOthers(this IServiceCollection services)
+        {
+            // Add Other Classes
+            services.AddSingleton<ConfigurationClasses.AppSettings>();
         }
     }
 }

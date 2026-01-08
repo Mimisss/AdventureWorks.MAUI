@@ -1,4 +1,5 @@
-﻿using Common.Library;
+﻿using AdventureWorks.MAUI.ConfigurationClasses;
+using Common.Library;
 using System.Windows.Input;
 
 namespace AdventureWorks.MAUI.MauiViewModelClasses
@@ -9,9 +10,20 @@ namespace AdventureWorks.MAUI.MauiViewModelClasses
     {
         private readonly PrivacyPolicyViewModel privacyPolicyViewModel;
 
-        public LoginViewModel(PrivacyPolicyViewModel privacyPolicyViewModel)
+        private AppSettings settings;
+
+        public LoginViewModel(PrivacyPolicyViewModel privacyPolicyViewModel, AppSettings settings)
         {
             this.privacyPolicyViewModel = privacyPolicyViewModel;
+
+            this.settings = settings;
+        }
+                
+        public AppSettings Settings
+        {
+            get { return settings; }
+            // Note that RaisePropertyChanged is not called here
+            set { settings = value; }
         }
 
         public ICommand? PrivacyPolicyDisplay { get; private set; }
