@@ -13,6 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -23,7 +24,10 @@
         <partial:InfoMessageArea Grid.Row="1"
                                  Grid.ColumnSpan="2" />
 
-        <CollectionView Grid.Row="2"
+        <partial:ExceptionMessageArea Grid.Row="1"
+                                      Grid.ColumnSpan="2" />
+        
+        <CollectionView Grid.Row="3"
                         SelectionMode="Single"
                         ItemsSource="{Binding Products}">
             <CollectionView.ItemTemplate>

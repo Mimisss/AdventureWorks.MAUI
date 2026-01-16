@@ -21,7 +21,7 @@ namespace AdventureWorks.MAUI.ExtensionClasses
         private static void AddRepositories(this IServiceCollection services)
         {
             // Add Repository Classes
-            services.AddScoped<IRepository<User>, UserRepository>();
+            //services.AddScoped<IRepository<User>, UserRepository>();
 
             services.AddScoped<IRepository<PhoneType>, PhoneTypeRepository>();
 

@@ -13,6 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -22,8 +23,11 @@
 
         <partial:InfoMessageArea Grid.Row="1"
                                  Grid.ColumnSpan="2" />
+
+        <partial:ExceptionMessageArea Grid.Row="2"
+                                      Grid.ColumnSpan="2" />
         
-        <ListView Grid.Row="2"
+        <ListView Grid.Row="3"
                   HasUnevenRows="True"
                   ItemsSource="{Binding Users}">
             <ListView.ItemTemplate>
