@@ -52,7 +52,9 @@
                                 <ImageButton Source="trash.png"                                                 
                                              Aspect="Center"
                                              HeightRequest="24"
-                                             ToolTipProperties.Text="Delete User" />
+                                             ToolTipProperties.Text="Delete User" 
+                                             CommandParameter="{Binding UserId}"
+                                             Command="{Binding Source={x:Reference UserListPage}, Path=BindingContext.DeleteCommand}"/>
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                     </ViewCell>

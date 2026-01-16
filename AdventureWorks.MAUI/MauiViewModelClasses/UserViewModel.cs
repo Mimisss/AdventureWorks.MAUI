@@ -24,8 +24,10 @@ namespace AdventureWorks.MAUI.MauiViewModelClasses
         public ICommand? SaveCommand { get; private set; }
 
         public ICommand? EditCommand { get; private set; }
-
+        
         public ICommand? CancelCommand { get; private set; }
+
+        public ICommand? DeleteCommand { get; private set; }
 
         public override void Init()
         {
@@ -36,6 +38,8 @@ namespace AdventureWorks.MAUI.MauiViewModelClasses
             EditCommand = new Command<int>(async (int id) => await EditAsync(id));
 
             CancelCommand = new Command(async () => await CancelAsync());
+
+            DeleteCommand = new Command(async () => await DeleteAsync());
         }
 
         public async Task EditAsync(int id)
@@ -58,6 +62,27 @@ namespace AdventureWorks.MAUI.MauiViewModelClasses
         public async Task CancelAsync()
         {
             await Shell.Current.GoToAsync("..");
+        }
+
+        public async Task<bool> DeleteAsync()
+        {
+            bool result = false;
+
+            bool perform = await Shell.Current.CurrentPage.DisplayAlert("Delete?", "Delete the User?", "Yes", "No");
+
+            if (perform)
+            {
+                // TODO: Delete User Here
+                User? response = new();
+
+                if (response != null)
+                {
+                    // Redisplay List
+                    await GetAsync();
+                }
+            }
+
+            return result;
         }
     }
 }
