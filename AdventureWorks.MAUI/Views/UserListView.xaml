@@ -12,6 +12,7 @@
     <Grid Style="{StaticResource Grid.Page}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -19,7 +20,10 @@
                 ViewTitle="User List"
                 ViewDescription="List of system users." />
 
-        <ListView Grid.Row="1"
+        <partial:InfoMessageArea Grid.Row="1"
+                                 Grid.ColumnSpan="2" />
+        
+        <ListView Grid.Row="2"
                   HasUnevenRows="True"
                   ItemsSource="{Binding Users}">
             <ListView.ItemTemplate>

@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace AdventureWorks.ViewModelLayer
 {
-    public class ProductViewModel : VieWModelBase
+    public class ProductViewModel : ViewModelBase
     {
         private Product? currentEntity = new();
 
@@ -45,7 +45,8 @@ namespace AdventureWorks.ViewModelLayer
 
         public async Task<ObservableCollection<Product>> GetAsync()
         {
-            RowsAffected = 0;
+            BeginProcessing();
+
             try
             {
                 if (repository == null)
@@ -66,11 +67,15 @@ namespace AdventureWorks.ViewModelLayer
                 PublishException(ex);
             }
 
+            EndProcessing();
+
             return Products;
         }
 
         public async Task<Product?> GetAsync(int id)
         {
+            BeginProcessing();
+
             try
             {
                 if (repository != null)
@@ -102,10 +107,10 @@ namespace AdventureWorks.ViewModelLayer
             } 
             catch (Exception ex) 
             {
-                RowsAffected = 0;
-
                 PublishException(ex);
             }
+
+            EndProcessing();
 
             return CurrentEntity;
         }

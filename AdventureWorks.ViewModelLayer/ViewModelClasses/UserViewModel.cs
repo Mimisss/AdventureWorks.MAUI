@@ -10,7 +10,7 @@ namespace AdventureWorks.ViewModelLayer
     // to load data into entities and save data. View model classes may expose an
     // entity object or have properties to expose only those properties of the entity
     // object needed for the UI.
-    public class UserViewModel : VieWModelBase
+    public class UserViewModel : ViewModelBase
     {
         private User? currentEntity = new();
 
@@ -74,7 +74,7 @@ namespace AdventureWorks.ViewModelLayer
         // Return a list of users that can be bound to a collection-type control
         public async Task<ObservableCollection<User>> GetAsync()
         {
-            RowsAffected = 0;
+            BeginProcessing();
 
             try
             {
@@ -96,12 +96,16 @@ namespace AdventureWorks.ViewModelLayer
                 PublishException(ex);
             }
 
+            EndProcessing();
+
             return Users;
         }
 
         // Set the CurrentEntity property to a single user object, then return it
         public async Task<User?> GetAsync(int id)
         {
+            BeginProcessing();
+
             try
             {
                 // Get a User from a data store 
@@ -142,10 +146,10 @@ namespace AdventureWorks.ViewModelLayer
             }
             catch (Exception ex)
             {
-                RowsAffected = 0;
-
                 PublishException(ex);
             }
+
+            EndProcessing();
 
             return CurrentEntity;
         }

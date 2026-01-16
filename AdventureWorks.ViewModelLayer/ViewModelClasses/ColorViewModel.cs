@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace AdventureWorks.ViewModelLayer
 {
-    public class ColorViewModel : VieWModelBase
+    public class ColorViewModel : ViewModelBase
     {
         private Color? currentEntity = new();
 

@@ -36,4 +36,13 @@
         <Setter Property="HeightRequest" Value="1" />
         <Setter Property="Margin" Value="0,0,0,10" />
     </Style>
+    <Style TargetType="Label"
+           x:Key="InfoMessageArea">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Margin" Value="4,4" />
+    </Style>
+    <Style TargetType="Label" x:Key="ErrorMessage">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="Red" />
+    </Style>
 </ResourceDictionary>
