@@ -14,7 +14,7 @@
     </ContentPage.Resources>
 
     <ScrollView>
-        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
               ColumnDefinitions="Auto,*"
               Style="{StaticResource Grid.Page}">
             <partial:HeaderView 
@@ -133,6 +133,8 @@
                              ToolTipProperties.Text="Cancel"
                              Command="{Binding CancelCommand}"/>
             </HorizontalStackLayout>
+            <partial:ValidationMessageArea Grid.Row="12"
+                                           Grid.ColumnSpan="2" />
         </Grid>
     </ScrollView>
 </ContentPage>

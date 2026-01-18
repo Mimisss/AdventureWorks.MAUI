@@ -23,26 +23,34 @@
     <Style TargetType="HorizontalStackLayout">
         <Setter Property="Spacing" Value="5" />
     </Style>
-    <Style TargetType="Border"
-           x:Key="Border.Page">
+    <Style TargetType="Border" x:Key="Border.Page">
         <Setter Property="Margin" Value="20" />
         <Setter Property="HorizontalOptions" Value="Fill" />
         <Setter Property="VerticalOptions" Value="Fill" />
     </Style>
-    <Style TargetType="BoxView"
-           x:Key="Grid.Item.Separator">
+    <Style TargetType="BoxView" x:Key="Grid.Item.Separator">
         <Setter Property="VerticalOptions" Value="Fill" />
         <Setter Property="BackgroundColor" Value="LightGray" />
         <Setter Property="HeightRequest" Value="1" />
         <Setter Property="Margin" Value="0,0,0,10" />
     </Style>
-    <Style TargetType="Label"
-           x:Key="InfoMessageArea">
+    <Style TargetType="Label" x:Key="InfoMessageArea">
         <Setter Property="FontSize" Value="18" />
         <Setter Property="Margin" Value="4,4" />
     </Style>
     <Style TargetType="Label" x:Key="ErrorMessage">
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="TextColor" Value="Red" />
+    </Style>
+    <Style TargetType="Label" x:Key="ValidationMessage">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="Red" />
+    </Style>
+
+    <Style TargetType="Border" x:Key="ValidationErrorArea">
+        <Setter Property="Stroke" Value="Gray" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="10" />
     </Style>
 </ResourceDictionary>

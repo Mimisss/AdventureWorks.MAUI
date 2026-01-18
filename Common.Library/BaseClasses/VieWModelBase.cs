@@ -1,4 +1,7 @@
-﻿namespace Common.Library
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+
+namespace Common.Library
 {
     public class ViewModelBase : CommonBase
     {
@@ -8,6 +11,10 @@
         private bool isInfoAreaVisible;
 
         private bool isExceptionAreaVisible;
+
+        private bool isValidationAreaVisible;
+
+        private ObservableCollection<ValidationMessage> validationMessages = new();
 
         public int RowsAffected
         {
@@ -42,6 +49,28 @@
             }
         }
 
+        public bool IsValidationAreaVisible
+        {
+            get { return isValidationAreaVisible; }
+            set
+            {
+                isValidationAreaVisible = value;
+
+                RaisePropertyChanged(nameof(IsValidationAreaVisible));
+            }
+        }
+
+        public ObservableCollection<ValidationMessage> ValidationMessages
+        {
+            get { return validationMessages; }
+            set
+            {
+                validationMessages = value;
+
+                RaisePropertyChanged(nameof(ValidationMessages));
+            }
+        }
+
         protected virtual void PublishException(Exception ex)
         {
             LastException = ex;
@@ -63,6 +92,10 @@
             IsInfoAreaVisible = true;
 
             IsExceptionAreaVisible = false;
+
+            IsValidationAreaVisible = false;
+
+            ValidationMessages.Clear();
         }
 
         protected virtual void EndProcessing()
@@ -71,6 +104,47 @@
             {
                 IsExceptionAreaVisible = true;
             }
+
+            IsValidationAreaVisible = ValidationMessages.Count > 0;
+        }
+
+        public bool Validate<T>(T entity)
+        {
+            ValidationMessages.Clear();
+            if (entity != null)
+            {                
+                ValidationContext context = new(entity, serviceProvider: null, items: null);
+                
+                List<ValidationResult> results = new();
+                
+                
+                if (!Validator.TryValidateObject(entity, context, results, true))
+                {
+                    // Get validation results
+                    foreach (ValidationResult item in results)
+                    {
+                        string propName = string.Empty;
+
+                        if (item.MemberNames.Any())
+                        {
+                            propName = ((string[])item.MemberNames)[0];
+                        }
+
+                        // Build new ValidationMessage object
+                        ValidationMessage msg = new()
+                        {
+                            Message = item.ErrorMessage ?? string.Empty,
+                            PropertyName = propName
+                        };
+                                                
+                        ValidationMessages.Add(msg);
+                    }
+                }
+            }
+
+            IsValidationAreaVisible = ValidationMessages.Count > 0;
+
+            return !IsValidationAreaVisible;
         }
     }
 }

@@ -156,10 +156,20 @@ namespace AdventureWorks.ViewModelLayer
 
         public async virtual Task<User?> SaveAsync()
         {
-            // TODO: Write code to save data
-            //System.Diagnostics.Debugger.Break();
+            User? ret;
 
-            return await Task.FromResult(new User());
+            if (Validate(CurrentEntity))
+            {
+                // TODO: Write code to save data
+                //System.Diagnostics.Debugger.Break();
+                ret = new User();
+            }
+            else
+            {
+                ret = null;
+            }
+
+            return await Task.FromResult(ret);
         }
 
         public async Task<ObservableCollection<string>> GetPhoneTypesAsync()

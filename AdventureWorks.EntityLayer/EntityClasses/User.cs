@@ -1,7 +1,14 @@
 ﻿using Common.Library;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AdventureWorks.EntityLayer
 {
+    /// <summary>
+    /// This class contains properties that map
+    /// to each field in the dbo.User table.
+    /// </summary>
+    [Table("User", Schema = "dbo")]
     public class User : EntityBase
     {
         private int userId;
@@ -36,6 +43,8 @@ namespace AdventureWorks.EntityLayer
 
         private TimeSpan? startTime = new TimeSpan(8, 0, 0);
 
+        [Display(Name = "User Id")]
+        [Required(ErrorMessage = "{0} must be filled in.")]
         public int UserId
         {
             get { return userId; }
@@ -45,7 +54,10 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(UserId));
             }
         }
-        
+
+        [Display(Name = "Login Id")]
+        [Required(ErrorMessage = "{0} must be filled in.")]
+        [StringLength(20, MinimumLength = 4, ErrorMessage = "{0} must be between {2} and {1} characters long.")]
         public string LoginId
         { 
             get { return loginId; }
@@ -55,7 +67,10 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(LoginId));
             }
         }
-        
+
+        [Display(Name = "First Name")]
+        [Required(ErrorMessage = "{0} must be filled in.")]
+        [StringLength(50, MinimumLength = 0, ErrorMessage = "{0} must be between {2} and {1} characters long.")]
         public string FirstName
         {
             get { return firstName; }
@@ -65,7 +80,10 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(FirstName));
             }
         }
-        
+
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "{0} must be filled in.")]
+        [StringLength(50, MinimumLength = 0, ErrorMessage = "{0} must be between {2} and {1} characters long.")]
         public string LastName 
         {
             get { return lastName; }
@@ -76,6 +94,9 @@ namespace AdventureWorks.EntityLayer
             }
         }
 
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "{0} must be filled in.")]
+        [StringLength(256, MinimumLength = 0, ErrorMessage = "{0} must be between {2} and {1} characters long.")]
         public string Email
         {
             get { return email; }
@@ -85,7 +106,10 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(Email));
             }
         }
-        
+
+        [Display(Name = "Password")]
+        [Required(ErrorMessage = "{0} must be filled in.")]
+        [StringLength(12, MinimumLength = 0, ErrorMessage = "{0} must be between {2} and {1} characters long.")]
         public string Password
         {
             get { return password; }
@@ -95,7 +119,10 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(Password));
             }
         }
-        
+
+        [Display(Name = "Phone")]
+        [Required(ErrorMessage = "{0} must be filled in.")]
+        [StringLength(50, MinimumLength = 0, ErrorMessage = "{0} must be between {2} and {1} characters long.")]
         public string Phone
         {
             get { return phone; }
@@ -105,7 +132,9 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(Phone));
             }
         }
-        
+
+        [Display(Name = "Phone Type")]        
+        [StringLength(10, MinimumLength = 0, ErrorMessage = "{0} must be between {2} and {1} characters long.")]
         public string PhoneType
         {
             get { return phoneType; }
@@ -115,7 +144,8 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(PhoneType));
             }
         }
-        
+
+        [Display(Name = "Is Full Time")]
         public bool IsFullTime
         {
             get { return isFullTime; }
@@ -125,7 +155,8 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(IsFullTime));
             }
         }
-        
+
+        [Display(Name = "Is Enrolled in 40 1K")]
         public bool IsEnrolledIn401k
         {
             get { return isEnrolledIn401k; }
@@ -135,7 +166,8 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(IsEnrolledIn401k));
             }
         }
-        
+
+        [Display(Name = "Is Enrolled In Health Care")]
         public bool IsEnrolledInHealthCare
         {
             get { return isEnrolledInHealthCare; }
@@ -145,7 +177,8 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(IsEnrolledInHealthCare));
             }
         }
-        
+
+        [Display(Name = "Is Enrolled In Hsa")]
         public bool IsEnrolledInHSA
         {
             get { return isEnrolledInHSA; }
@@ -155,7 +188,8 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(IsEnrolledInHSA));
             }
         }
-        
+
+        [Display(Name = "Is Enrolled In Flex Time")]
         public bool IsEnrolledInFlexTime
         {
             get { return isEnrolledInFlexTime; }
@@ -165,7 +199,8 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(IsEnrolledInFlexTime));
             }
         }
-        
+
+        [Display(Name = "Is Employed")]
         public bool IsEmployed
         {
             get { return isEmployed; }
@@ -175,7 +210,8 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(IsEmployed));
             }
         }
-        
+
+        [Display(Name = "Birth Date")]
         public DateTime BirthDate
         {
             get { return birthDate; }
@@ -185,7 +221,8 @@ namespace AdventureWorks.EntityLayer
                 RaisePropertyChanged(nameof(BirthDate));
             }
         }
-        
+
+        [Display(Name = "Start Time")]
         public TimeSpan? StartTime
         {
             get { return startTime; }
