@@ -4,8 +4,6 @@ using System.Windows.Input;
 
 namespace AdventureWorks.MAUI.MauiViewModelClasses
 {
-    // No corresponding view model class in the ViewModelLayer project
-    // is needed as the functionality is to call pages in the UI.
     public class LoginViewModel : ViewModelBase
     {
         private readonly PrivacyPolicyViewModel privacyPolicyViewModel;
