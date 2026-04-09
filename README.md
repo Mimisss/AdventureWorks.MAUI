@@ -9,3 +9,4 @@ The original code can be downloaded [here](https://github.com/PaulDSheriff/Artic
 - [Data Entry Controls and Data Binding](https://codemag.com/Article/2411041/Exploring-.NET-MAUI-Data-Entry-Controls-and-Data-Binding) (2024 - November/December)
 - [MVVM, DI, and Commanding](https://codemag.com/Article/2501031/Exploring-.NET-MAUI-MVVM-DI-and-Commanding) (2025 - January/February)
 - [Working with Lists of Data](https://codemag.com/Article/2503021/Exploring-.NET-MAUI-Working-with-Lists-of-Data) (2025 - March/April)
+- [Popups, Messages and Data Validation](https://codemag.com/Article/2505031/Exploring-.NET-MAUI-Popups-Messages-and-Data-Validation) (2025 - May/June)
